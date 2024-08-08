@@ -53,11 +53,11 @@ The last piece defines the dependencies we want to use inside our templates. In 
 
 # Templates
 Templates are all about the user, what they see. This is where HTML lives. It decides how the app looks like, but on a smaller scale. It is tied to the component. Example of our app component
-''' 
+```
 <app-top-bar></app-top-bar>
 
 <section class="main-content">
   <router-outlet></router-outlet>
 </section>
-'''
+```
 
