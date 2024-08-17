@@ -212,3 +212,9 @@ export class CartService {
     return this.items.reduce((sum, item) => sum + item.price , 0); // Use reduce to sum up the prices of the items in the cart.
   }
 ```
+
+We can see that our cart service has an array of products, a method to add things to the cart, clear the cart, etc
+
+We can see a decorator called injectable. This is how we tell angular we are creating a service and allows us to use the built in angular dependency injection.
+If we go to our components classes we will see the inject derivatives.
+With this, angular will create the service and share the cart across multiple components. We can reuse code, share data, and separate concerns like putting business logic in services, separate from the presentation layer.
