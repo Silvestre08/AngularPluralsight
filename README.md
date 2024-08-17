@@ -218,3 +218,5 @@ We can see that our cart service has an array of products, a method to add thing
 We can see a decorator called injectable. This is how we tell angular we are creating a service and allows us to use the built in angular dependency injection.
 If we go to our components classes we will see the inject derivatives.
 With this, angular will create the service and share the cart across multiple components. We can reuse code, share data, and separate concerns like putting business logic in services, separate from the presentation layer.
+
+To learn: reative and template forms, routes, modules etc.
