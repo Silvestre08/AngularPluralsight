@@ -254,6 +254,7 @@ export class CartService {
   getSubtotal() {
     return this.items.reduce((sum, item) => sum + item.price , 0); // Use reduce to sum up the prices of the items in the cart.
   }
+}
 ```
 
 We can see that our cart service has an array of products, a method to add things to the cart, clears the cart, etc
@@ -331,7 +332,42 @@ Check AOT and Ivy. These are angular key inovations that increase performance wh
 # Ecosystem
 
 NgRx is the de-facto state management library for Angular. Nx is a model repo built fron the ground up for aunglar projects.
-Angular material is an implementation of googles material project.
+Angular material is an implementation of googles material project. Plety of support
+
+# Gotchas, tips and tricks
+
+Gotchas are concepts hard to understand whick can make a problem harder, or make a junior dev use somthing without understanding the implications.
+Typescript has its own learning curve.
+One important thing to learn about typescript is how it gives types identifiers:
+
+```
+constructor(private articleSvc: ArticleService)
+```
+This articleSvc identifier has been marked with the AngularService type.
+
+Another gotcha is pipes or custom pipes. Creating a custom pipe is easy, but complexity can increase and if you do not know what your are doing, they can hurt performance.
+Pipes can be
+1. pure: only evaluated when input changes.
+1. impure: evaluated on every change detection cycle. they make it hard to keep good performance.
+Impure pipes are complex so just use them when necessary. 
+
+Modules can also be painfull. The module API contains a lot of sections like imports, exports, bootstrap, providers, etc..
+Usually multiple modules are developed by feature areas, lazy loading. Some dificulties arise: routing, exporting and importing items from each of the modules.
+Another gotach is to learn how the build works and tune that process for performance. 
+
+Another issue is direct access to the DOM. Angular has a wrapper to hide complexity and to improve performance. But now it is difficult to get to the DOM. 
+RxJs is alo hard to wrapp the head around. Observables, subscriptions, got vs cold observables.
+
+Tips:
+1. Learn the angular 
+1. CLI, Typscript, NgRx and Webpack. it will help with development. 
+1. Follow style guide. 
+1. Do not access DOM.
+1. Use signals (better thant rxJs) and lazy loading
+1. Understand what you are sending to the browser (download bundle, look the size).
+1. Use immutable or observale where appropriate.
+1. Testing
+
 
 # Next Steps
 
